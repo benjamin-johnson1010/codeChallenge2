@@ -6,29 +6,33 @@ var greenClick= 0;
 var blueClick = 0;
 
 $(document).ready(function(){
-  $('.redButton').on('click', function(){
-    console.log('clicked button');
-    redClick ++;
-$('#redCount').html(redClick);
-$('#outputDiv').append(//squared element here);
-});
 
- });
- $('.blueButton').on('click', function(){
-   console.log('clicked button');
-   blueClick ++;
-$('#blueCount').html(blueClick);
-$('#outputDiv').append(//squared element here);
+$('.color-button').on('click', function(){
+console.log($( this ).attr( 'data-color' ));
+if( $( this ).attr( 'data-color' ) == 'yellow'){
+yellowClick++;
+$('#yellow').html('Total yellow: ' + yellowClick);
+var yellowBlock = '<div class="yellow color-cube"></div>';
+$('.container').append(yellowBlock);
+}
+else if ( $( this ).attr( 'data-color' ) == 'red'){
+redClick++;
+$('#red').html('Total red: ' + redClick);
+var redBlock = '<div class="red color-cube"></div>';
+$('.container').append(redBlock);
+
+}
+else if ( $( this ).attr( 'data-color' ) == 'green'){
+greenClick++;
+$('#green').html('Total green: ' + greenClick);
+var greenBlock = '<div class="green color-cube"></div>';
+$('.container').append(greenBlock);
+}
+else if ( $( this ).attr( 'data-color' ) == 'blue'){
+blueClick++;
+$('#blue').html('Total blue: ' + blueClick);
+var blueBlock = '<div class="blue color-cube"></div>';
+$('.container').append(blueBlock);
+}
 });
-$('.greenButton').on('click', function(){
-  console.log('clicked button');
-  greenClick ++;
-$('#greenCount').html(greenClick);
-$('#outputDiv').append(//squared element here);
-});
-$('.yellowButton').on('click', function(){
-  console.log('clicked button');
-  yellowClick ++;
-$('#yellowCount').html(yellowClick);
-$('#outputDiv').append(//squared element here);
 });
